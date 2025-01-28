@@ -1,0 +1,153 @@
+/* Variables for consistent theme */
+:root {
+    --primary-bg: #2C3E50;
+    --secondary-bg: #ecf0f1;
+    --accent-color: #e67e22;
+    --highlight-color: #f39c12;
+    --font-color: #ecf0f1;
+    --font-family: 'Roboto', sans-serif;
+    --transition-duration: 0.3s;
+    --border-radius: 8px;
+    --shadow-color: rgba(252, 10, 10, 0.1);
+    --max-width: 1400px;
+}
+
+/* Body Styles */
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--secondary-bg), #bdc3c7);
+    color: var(--font-color);
+    box-sizing: border-box;
+    transition: background-color var(--transition-duration);
+}
+
+/* Global Link Styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Main App Layout - Flexbox */
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-bg);
+    padding: 20px 30px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color var(--transition-duration);
+}
+
+.navbar:hover {
+    background-color: rgba(52, 152, 219, 0.8);
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--highlight-color);
+    letter-spacing: 2px;
+    transition: color var(--transition-duration);
+}
+
+
+
+/* Menu Button (Hamburger Icon) */
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 101;
+    transition: transform var(--transition-duration);
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Links */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    transition: opacity var(--transition-duration);
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+/* Navigation Link Styling */
+.nav-link {
+    display: block;
+    padding: 12px 18px;
+    background-color: var(--primary-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color var(--transition-duration), padding-left var(--transition-duration);
+}
+
+.nav-link:hover {
+    background-color: var(--accent-color);
+    padding-left: 20px;
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-bg);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-duration), visibility var(--transition-duration);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    background-color: var(--primary-bg);
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color var(--transition-duration);
+}
+
+.dropdown-item:hover {
+    background-color: var(--accent-color);
+}
